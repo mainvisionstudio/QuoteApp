@@ -1,0 +1,125 @@
+@font-face {
+  font-family: regular;
+  src: url(./fonts/Montserrat-Regular.ttf);
+}
+
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: #38383d;
+  overflow: hidden;
+}
+
+.background {
+  z-index: 5;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #38383d;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#menu {
+  z-index: 10;
+  position: absolute;
+  background-color: white;
+  width: calc(30vw - 100px);
+  height: calc(100vh - 120px);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#pdfViewer {
+  z-index: 10;
+  position: absolute;
+  left: calc(30vw);
+  width: calc(70vw - 40px);
+  height: calc(100vh - 40px);
+  border: none;
+  margin: 20px;
+}
+
+div {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+#graph {
+  background-color: white;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 3px solid #E53C39;
+  position: relative;
+  width: 540px;
+  height: 1500px;
+  font-family: regular;
+  font-size: 12pt;
+  padding: 80px 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+#graph-content {
+  background-color: white;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
+}
+
+#day {
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 20px;
+}
+
+#line {
+  background-color: white;
+  display: flex;
+  height: fit-content;
+  align-items: center;
+  gap: 20px;
+}
+
+#time {
+  background-color: white;
+  border: 3px solid #E53C39;
+  border-radius: 200px;
+  height: fit-content;
+  min-width: 80px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#text {
+  background-color: white;
+  padding: 20px;
+  align-items: center;
+  justify-content: left;
+  height: fit-content;
+}
+
+#space {
+  background-color: white;
+  border: 3px solid #E53C39;
+  border-width: 0px 3px 0px 0px;
+  width: 60px;
+  height: 200%;
+}
