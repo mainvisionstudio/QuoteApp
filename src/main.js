@@ -50,7 +50,7 @@ async function createPdf() {
   //CONTENT
 
   //Cover
-  const pdfCoverUrl = './pdf/Cover.pdf';
+  const pdfCoverUrl = '../public/pdf/Cover.pdf';
   const pdfCoverBytes = await fetch(pdfCoverUrl).then(res => res.arrayBuffer());
   const [pdfCover] = await pdfDoc.embedPdf(pdfCoverBytes);
 
@@ -83,7 +83,7 @@ async function createPdf() {
   }
 
   //Briefing
-  const pdfBriefUrl = './pdf/Briefing.pdf';
+  const pdfBriefUrl = '../public/pdf/Briefing.pdf';
   const pdfBriefBytes = await fetch(pdfBriefUrl).then(res => res.arrayBuffer());
   const [pdfBrief] = await pdfDoc.embedPdf(pdfBriefBytes);
   page[2].drawPage(pdfBrief, {
@@ -120,11 +120,13 @@ async function createPdf() {
   });
 
   //Briefing
+  /*
   const clientBrief = stringsArray[5];
   formatAndDrawText(clientBrief, 50, 576, 48, page[2], regular, 8, rgb(0, 0, 0));
 
   const graphImageBytes = await fetch(graphImageUrl).then(res => res.arrayBuffer());
   const graphImage = await pdfDoc.embedJpg(graphImageBytes);
+  console.log(graphImageBytes);
 
   page[2].drawImage(graphImage, {
     width: 270,
@@ -132,7 +134,7 @@ async function createPdf() {
     x: 304,
     y: 20
   });
-
+*/
   //Proposal
   const clientProposal = stringsArray[6];
   formatAndDrawText(clientProposal, 50, 331, 48, page[2], regular, 8, rgb(0, 0, 0));
@@ -141,7 +143,7 @@ async function createPdf() {
 
 
   //Event Type & Portofolio
-  const pdfTypeUrl = `./pdf/${stringsArray[0]}.pdf`;
+  const pdfTypeUrl = `../public/pdf/${stringsArray[0]}.pdf`;
   const pdfTypeBytes = await fetch(pdfTypeUrl).then(res => res.arrayBuffer());
   const pdfType0 = await pdfDoc.embedPdf(pdfTypeBytes, [0]);
   const pdfType1 = await pdfDoc.embedPdf(pdfTypeBytes, [1]);
@@ -272,7 +274,7 @@ window.saveString = function (i, value) {
   stringsArray[i] = value;
   //generatePDF();
 };
-
+/*
 const graph = document.getElementById('graph-content');
 window.timelineF = function (value) {
   graph.innerHTML = '';
@@ -321,7 +323,7 @@ window.timelineF = function (value) {
   });
 
   //generatePDF();
-}
+}*/
 
 window.preview = function (value) {
   generatePDF();
@@ -420,10 +422,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   await generatePDF();
 });
 
-
-const presencialInput = getElementById('presencial');
-const digitalInput = getElementById('digital');
-const espacoInput = getElementById('espaco');
+const presencialInput = document.getElementById('presencial');
+const digitalInput = document.getElementById('digital');
+const espacoInput = document.getElementById('espaco');
 
 document.addEventListener('keydown', function (event) {
   if (event.key === "Enter") {

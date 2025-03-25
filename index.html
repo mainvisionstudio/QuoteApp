@@ -7,9 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite App</title>
 </head>
-
 <body>
-  <script type="module" src="src/main.js"></script>
 
   <div id="menu">
     <div>Tipo de Evento</div>
@@ -24,20 +22,17 @@
     <div><input id="eventDateInput" placeholder="Data do Evento" onchange="saveString(4, this.value)"></div>
     <div><textarea id="briefingInput" oninput="saveString(5, this.value)">Briefing do Cliente</textarea></div>
     <div><textarea id="proposalInput" oninput="saveString(6, this.value)">Proposta Mainvision</textarea></div>
-    <div><textarea id="timelineInput" oninput="timelineF(this.value)">Timeline: "Dia 1", "10:00 - Início"</textarea>
-    </div>
+    <div><textarea id="timelineInput" oninput="timelineF(this.value)">Timeline: "Dia 1", "10:00 - Início"</textarea></div>
     <div>Logo <input id="logoInput" type="file" accept="image/*" onchange="clientLogo(this.files[0])"></div>
-    <div>Imagens de Referência <input id="refInput" type="file" accept="image/*" multiple
-        onchange="refImages(this.files)"></div>
-    <div>Maquete 3D <input id="modelInput" type="file" accept="image/*" multiple onchange="planImages(this.files)">
-    </div>
+    <div>Imagens de Referência <input id="refInput" type="file" accept="image/*" multiple onchange="refImages(this.files)"></div>
+    <div>Maquete 3D <input id="modelInput" type="file" accept="image/*" multiple onchange="planImages(this.files)"></div>
     <div>Orçamento <input id="quoteInput" type="file" accept="image/*" onchange="quote(this.files[0])"></div>
     <div><button id="previewInput" onclick="preview()">Preview</button></div>
     <div><button id="downloadInput" onclick="downloadPDF()">Descarregar</button></div>
   </div>
 
   <iframe id="pdfViewer"></iframe>
-
+  
   <div class="background"></div>
 
   <div id="graph">
@@ -55,7 +50,7 @@
     </div>
   </div>
 
+  <script type="module" src="src/main.js"></script>
 
 </body>
-
 </html>
